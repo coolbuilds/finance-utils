@@ -1,17 +1,38 @@
 {
   "name": "finance-utils",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "format": "prettier --write .",
+    "build": "npm run lint && npm run format && tsup src/index.ts --dts",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "coverage": "vitest run --coverage",
+    "coverage:badge": "coverage-badges --output badges",
+    "coverage:badges": "coverage-badges --source coverage/coverage-summary.json --output badges.svg --format svg"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@eslint/js": "^9.39.4",
+    "@typescript-eslint/eslint-plugin": "^8.59.1",
+    "@typescript-eslint/parser": "^8.59.1",
+    "@vitest/coverage-v8": "^4.1.5",
+    "coverage-badges-cli": "^2.2.0",
+    "eslint": "^9.39.4",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-import": "^2.32.0",
+    "prettier": "^3.8.3",
     "tsup": "^8.5.1",
     "typescript": "^6.0.3",
+    "typescript-eslint": "^8.59.1",
     "vitest": "^4.1.5"
   }
 }

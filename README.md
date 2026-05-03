@@ -1,3 +1,4 @@
+![Coverage](./badges.svg)
 # @coolbuilds/finance-utils
 
 A modular TypeScript toolkit for financial logic --- built for
@@ -6,38 +7,38 @@ scalability, performance, and great developer experience.
 > Lightweight utilities for building banking, fintech, and payment
 > applications.
 
-------------------------------------------------------------------------
+---
 
 ## ✨ Features
 
--   💱 Currency & number helpers
--   💳 Installment calculations
--   🔐 Data masking (account, name, etc.)
--   🧾 Transaction utilities
--   ⚡ Zero dependencies
--   🧠 Simple, composable functions
+- 💱 Currency & number helpers
+- 💳 Installment calculations
+- 🔐 Data masking (account, name, etc.)
+- 🧾 Transaction utilities
+- ⚡ Zero dependencies
+- 🧠 Simple, composable functions
 
-------------------------------------------------------------------------
+---
 
 ## 📦 Installation
 
-``` bash
+```bash
 npm install @wearecool/finance-utils
 ```
 
 or
 
-``` bash
+```bash
 yarn add @wearecool/finance-utils
 ```
 
-------------------------------------------------------------------------
+---
 
 ## 🚀 Usage
 
 ### 🔐 Masking
 
-``` ts
+```ts
 import { maskAccount, maskName } from '@wearecool/finance-utils'
 
 maskAccount('1234567890')
@@ -47,29 +48,29 @@ maskName('Ricky Ariansyah')
 // R**** A********
 ```
 
-------------------------------------------------------------------------
+---
 
 ### 💳 Installment
 
-``` ts
+```ts
 import { splitInstallment } from '@wearecool/finance-utils'
 
 splitInstallment(1000, 3)
 // [333, 333, 334]
 ```
 
-------------------------------------------------------------------------
+---
 
 ### 🧾 Transaction ID
 
-``` ts
+```ts
 import { generateTrxId } from '@wearecool/finance-utils'
 
 generateTrxId()
 // TRX-20260503-ABC123
 ```
 
-------------------------------------------------------------------------
+---
 
 ## 🧩 API
 
@@ -89,11 +90,11 @@ Split amount into installments with correct rounding.
 
 Generate unique transaction ID.
 
-------------------------------------------------------------------------
+---
 
 ## 🛠️ Development
 
-``` bash
+```bash
 npm install
 npm run test
 npm run lint
@@ -101,21 +102,21 @@ npm run format
 npm run build
 ```
 
-------------------------------------------------------------------------
+---
 
 ## 🧪 Testing
 
 This project uses **Vitest** for unit testing.
 
-``` bash
+```bash
 npm run test
 ```
 
-------------------------------------------------------------------------
+---
 
 ## 📁 Project Structure
 
-``` bash
+```bash
 src/
   masking/
   installment/
@@ -123,7 +124,7 @@ src/
 tests/
 ```
 
-------------------------------------------------------------------------
+---
 
 ## 🤝 Contributing
 
@@ -134,13 +135,13 @@ Contributions are welcome!
 3.  Commit your changes\
 4.  Open a pull request
 
-------------------------------------------------------------------------
+---
 
 ## 📄 License
 
 MIT
 
-------------------------------------------------------------------------
+---
 
 ## 💡 Vision
 

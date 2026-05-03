@@ -68,10 +68,12 @@ On pushes to `main`, after a successful build, it:
 
 1. Verifies `NPM_TOKEN`.
 2. Bumps the patch version.
-3. Commits `package.json` and `package-lock.json`.
-4. Creates a version tag.
-5. Pushes the commit and tag.
-6. Publishes to npm.
+3. Updates `CHANGELOG.md`.
+4. Commits `package.json`, `package-lock.json`, and `CHANGELOG.md`.
+5. Creates a version tag.
+6. Pushes the commit and tag.
+7. Publishes to npm.
+8. Creates a GitHub Release with the generated release notes.
 
 Be cautious when editing the release flow. A broken workflow can bump versions without publishing, or publish without the expected tag.
 
@@ -80,6 +82,7 @@ Be cautious when editing the release flow. A broken workflow can bump versions w
 - Do not commit `node_modules` or `coverage`.
 - `dist` is ignored by Git, but it is generated during build and included in npm packages through the `files` field.
 - Keep README install and import examples aligned with the package name.
+- Keep `CHANGELOG.md` aligned with the release workflow.
 - Keep `package-lock.json` in sync after changing `package.json`.
 - Do not revert unrelated user changes.
 

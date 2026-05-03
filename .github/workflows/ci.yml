@@ -54,18 +54,63 @@ jobs:
       - name: Bump patch version
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: |
+          PREVIOUS_TAG=$(git describe --tags --abbrev=0 2>/dev/null || true)
           npm version patch --no-git-tag-version
           VERSION=$(node -p "require('./package.json').version")
-          git add package.json package-lock.json
+
+          if [ -n "$PREVIOUS_TAG" ]; then
+            RANGE="${PREVIOUS_TAG}..HEAD"
+          else
+            RANGE="HEAD"
+          fi
+
+          COMMITS=$(git log "$RANGE" --pretty=format:"- %s (%h)" --no-merges --invert-grep --grep="^chore(release):" || true)
+          if [ -z "$COMMITS" ]; then
+            COMMITS="- Maintenance release."
+          fi
+
+          {
+            echo "## v${VERSION} - $(date -u +%Y-%m-%d)"
+            echo
+            echo "$COMMITS"
+            echo
+          } > "$RUNNER_TEMP/release-notes.md"
+
+          if [ -f CHANGELOG.md ]; then
+            {
+              head -n 1 CHANGELOG.md
+              echo
+              cat "$RUNNER_TEMP/release-notes.md"
+              tail -n +3 CHANGELOG.md
+            } > CHANGELOG.tmp
+            mv CHANGELOG.tmp CHANGELOG.md
+          else
+            {
+              echo "# Changelog"
+              echo
+              cat "$RUNNER_TEMP/release-notes.md"
+            } > CHANGELOG.md
+          fi
+
+          echo "RELEASE_VERSION=${VERSION}" >> "$GITHUB_ENV"
+          echo "RELEASE_NOTES_FILE=$RUNNER_TEMP/release-notes.md" >> "$GITHUB_ENV"
+
+          git add package.json package-lock.json CHANGELOG.md
           git commit -m "chore(release): v${VERSION} [skip ci]"
-          git tag "v${VERSION}"
+          git tag -a "v${VERSION}" -m "v${VERSION}"
 
       - name: Push version commit and tag
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        run: git push origin HEAD:main --follow-tags
+        run: git push origin HEAD:main "v${RELEASE_VERSION}"
 
       - name: Publish to npm
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Create GitHub Release
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: gh release create "v${RELEASE_VERSION}" --title "v${RELEASE_VERSION}" --notes-file "$RELEASE_NOTES_FILE"
+        env:
+          GH_TOKEN: ${{ github.token }}

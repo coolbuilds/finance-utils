@@ -61,17 +61,6 @@ splitInstallment(1000, 3)
 
 ---
 
-### 🧾 Transaction ID
-
-```ts
-import { generateTrxId } from '@wearecool/finance-utils'
-
-generateTrxId()
-// TRX-20260503-ABC123
-```
-
----
-
 ## 🧩 API
 
 ### `maskAccount(account: string): string`
@@ -85,10 +74,6 @@ Mask each word in a name.
 ### `splitInstallment(amount: number, months: number): number[]`
 
 Split amount into installments with correct rounding.
-
-### `generateTrxId(prefix?: string): string`
-
-Generate unique transaction ID.
 
 ---
 

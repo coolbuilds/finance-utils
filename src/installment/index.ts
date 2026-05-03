@@ -1,1 +1,1 @@
-export * from './splitinstallment'
+export * from './splitInstallment'

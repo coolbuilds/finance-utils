@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest'
+
 import { maskAccount, maskName } from '../src/masking'
 
 describe('masking', () => {
@@ -14,8 +15,7 @@ describe('masking', () => {
 
   describe('maskName', () => {
     it('should mask each word', () => {
-      expect(maskName('Ricky Ariansyah'))
-        .toBe('R**** A********')
+      expect(maskName('Ricky Ariansyah')).toBe('R**** A********')
     })
   })
 })

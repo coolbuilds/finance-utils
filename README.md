@@ -1,4 +1,5 @@
 ![Coverage](./badges.svg)
+
 # @coolbuilds/finance-utils
 
 A modular TypeScript toolkit for financial logic --- built for
@@ -23,13 +24,13 @@ scalability, performance, and great developer experience.
 ## 📦 Installation
 
 ```bash
-npm install @wearecool/finance-utils
+npm install @coolbuilds/finance-utils
 ```
 
 or
 
 ```bash
-yarn add @wearecool/finance-utils
+yarn add @coolbuilds/finance-utils
 ```
 
 ---
@@ -39,7 +40,7 @@ yarn add @wearecool/finance-utils
 ### 🔐 Masking
 
 ```ts
-import { maskAccount, maskName } from '@wearecool/finance-utils'
+import { maskAccount, maskName } from '@coolbuilds/finance-utils'
 
 maskAccount('1234567890')
 // ******7890
@@ -53,7 +54,7 @@ maskName('Ricky Ariansyah')
 ### 💳 Installment
 
 ```ts
-import { splitInstallment } from '@wearecool/finance-utils'
+import { splitInstallment } from '@coolbuilds/finance-utils'
 
 splitInstallment(1000, 3)
 // [333, 333, 334]

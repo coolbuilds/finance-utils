@@ -1,25 +1,56 @@
 {
-  "name": "finance-utils",
+  "name": "@coolbuilds/finance-utils",
   "version": "1.0.0",
+  "description": "A modular TypeScript toolkit for financial logic.",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
   "scripts": {
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix",
     "format": "prettier --write .",
-    "build": "npm run lint && npm run format && tsup src/index.ts --dts",
+    "build": "npm run lint && prettier --check . && tsup src/index.ts --format esm,cjs --dts",
+    "prepublishOnly": "npm run test:run && npm run build",
     "test": "vitest",
     "test:run": "vitest run",
     "coverage": "vitest run --coverage",
     "coverage:badge": "coverage-badges --output badges",
     "coverage:badges": "coverage-badges --source coverage/coverage-summary.json --output badges.svg --format svg"
   },
-  "keywords": [],
+  "keywords": [
+    "finance",
+    "fintech",
+    "installment",
+    "masking",
+    "typescript"
+  ],
   "author": "",
-  "license": "ISC",
-  "description": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coolbuilds/finance-utils.git"
+  },
+  "bugs": {
+    "url": "https://github.com/coolbuilds/finance-utils/issues"
+  },
+  "homepage": "https://github.com/coolbuilds/finance-utils#readme",
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
     "@eslint/js": "^9.39.4",
     "@typescript-eslint/eslint-plugin": "^8.59.1",

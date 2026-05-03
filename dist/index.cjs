@@ -38,7 +38,7 @@ function maskName(name) {
   return name.split(" ").map((word) => word[0] + "*".repeat(word.length - 1)).join(" ");
 }
 
-// src/installment/splitinstallment.ts
+// src/installment/splitInstallment.ts
 function splitInstallment(amount, months) {
   const base = Math.floor(amount / months);
   const remainder = amount % months;

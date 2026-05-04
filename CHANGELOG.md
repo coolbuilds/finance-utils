@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.0.9 - 2026-05-04
+
+- feat: add account number formatter.
+- feat: add decimal masking utility.
+- feat: add calculate total with tax utility.
+- ci: release from merged package version.
+- docs: render contributor profiles.
+
 ## v1.0.8 - 2026-05-04
 
 - feat: add currency formatter (4a7bd0d)

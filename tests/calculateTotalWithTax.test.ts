@@ -22,4 +22,8 @@ describe('calculateTotalWithTax', () => {
   it('should handle negative amount (refund case)', () => {
     expect(calculateTotalWithTax(-100000, 0.1)).toBe(-110000)
   })
+
+  it('should handle string input expected return 0', () => {
+    expect(calculateTotalWithTax('hahahahah', 'kocakgaming')).toBe(0)
+  })
 })

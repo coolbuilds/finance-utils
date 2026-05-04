@@ -41,8 +41,32 @@ function calculateCompoundInterest(principal, rate, periods, contribution = 0) {
   const contributionValue = contribution * ((growthFactor - 1) / rate);
   return principal * growthFactor + contributionValue;
 }
+
+// src/currency/formatCurrency.ts
+function formatCurrency(amount, options = {}) {
+  if (!Number.isFinite(amount)) {
+    throw new RangeError("amount must be a finite number");
+  }
+  const {
+    currency = "USD",
+    currencyDisplay,
+    locale = "en-US",
+    maximumFractionDigits,
+    minimumFractionDigits,
+    useGrouping
+  } = options;
+  return new Intl.NumberFormat(locale, {
+    currency,
+    currencyDisplay,
+    maximumFractionDigits,
+    minimumFractionDigits,
+    style: "currency",
+    useGrouping
+  }).format(amount);
+}
 export {
   calculateCompoundInterest,
+  formatCurrency,
   maskAccount,
   maskName,
   splitInstallment

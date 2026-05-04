@@ -21,6 +21,7 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
 var index_exports = {};
 __export(index_exports, {
   calculateCompoundInterest: () => calculateCompoundInterest,
+  formatCurrency: () => formatCurrency,
   maskAccount: () => maskAccount,
   maskName: () => maskName,
   splitInstallment: () => splitInstallment
@@ -70,9 +71,33 @@ function calculateCompoundInterest(principal, rate, periods, contribution = 0) {
   const contributionValue = contribution * ((growthFactor - 1) / rate);
   return principal * growthFactor + contributionValue;
 }
+
+// src/currency/formatCurrency.ts
+function formatCurrency(amount, options = {}) {
+  if (!Number.isFinite(amount)) {
+    throw new RangeError("amount must be a finite number");
+  }
+  const {
+    currency = "USD",
+    currencyDisplay,
+    locale = "en-US",
+    maximumFractionDigits,
+    minimumFractionDigits,
+    useGrouping
+  } = options;
+  return new Intl.NumberFormat(locale, {
+    currency,
+    currencyDisplay,
+    maximumFractionDigits,
+    minimumFractionDigits,
+    style: "currency",
+    useGrouping
+  }).format(amount);
+}
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   calculateCompoundInterest,
+  formatCurrency,
   maskAccount,
   maskName,
   splitInstallment

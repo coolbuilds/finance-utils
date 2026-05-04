@@ -74,6 +74,17 @@ calculateCompoundInterest(1000, 0.05, 2, 100)
 
 ---
 
+### 💱 Currency
+
+```ts
+import { formatCurrency } from '@coolbuilds/finance-utils'
+
+formatCurrency(15000, { currency: 'IDR', locale: 'id-ID' })
+// Rp 15.000
+```
+
+---
+
 ## 🧩 API
 
 ### `maskAccount(account: string): string`
@@ -92,6 +103,10 @@ Split amount into installments with correct rounding.
 
 Calculate compound interest, with optional contribution added at the end
 of each period.
+
+### `formatCurrency(amount: number, options?: FormatCurrencyOptions): string`
+
+Format a number as currency using `Intl.NumberFormat`.
 
 ---
 
@@ -124,6 +139,7 @@ src/
   masking/
   installment/
   interest/
+  currency/
   transaction/
 tests/
 ```

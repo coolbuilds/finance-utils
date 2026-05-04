@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.0.4 - 2026-05-04
+
+- feat: add compound interest utility (8f226d0)
+
 ## v1.0.3 - 2026-05-03
 
 - Add changelog and GitHub release automation (05a17fc)

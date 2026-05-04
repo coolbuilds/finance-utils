@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.0.5 - 2026-05-04
+
+- ci: update contributors during release (7c5d7c8)
+
 ## v1.0.4 - 2026-05-04
 
 - feat: add compound interest utility (8f226d0)

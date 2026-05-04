@@ -51,6 +51,5 @@ describe('masking', () => {
     it('handle edge case undefined', () => {
       expect(maskingDecimal(undefined, 'PKR', 'id-ID')).toBe('-')
     })
-
   })
 })

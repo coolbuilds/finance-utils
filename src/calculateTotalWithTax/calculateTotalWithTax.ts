@@ -3,5 +3,6 @@ export function calculateTotalWithTax(amount: number, taxRate: number): number {
     return 0
   }
 
-  return amount + amount * taxRate
+  const result = amount + amount * taxRate
+  return Number(result.toFixed(2))
 }

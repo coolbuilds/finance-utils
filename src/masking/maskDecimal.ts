@@ -18,7 +18,7 @@ type Currency =
   | 'KRW'
   | string
 
-export function maskingDecimal(
+export function maskDecimal(
   isDecimal: string | number | null | undefined,
   currency: Currency,
   locale: string = 'en-US'

@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 
-import { maskAccount, maskName, maskingDecimal } from '../src/masking'
+import { maskAccount, maskName, maskDecimal } from '../src/masking'
 
 describe('masking', () => {
   describe('maskAccount', () => {
@@ -19,57 +19,57 @@ describe('masking', () => {
     })
   })
 
-  describe('maskingDecimal', () => {
+  describe('maskDecimal', () => {
     it('should mask decimal with amount, currency, locale', () => {
-      expect(maskingDecimal('10000', 'IDR', 'en-US')).toBe('Rp 10,000')
+      expect(maskDecimal('10000', 'IDR', 'en-US')).toBe('Rp 10,000')
     })
 
     it('should mask decimal with amount decimal, currency, locale', () => {
-      expect(maskingDecimal(10000.5, 'USD', 'en-US')).toBe('USD 10,000.50')
+      expect(maskDecimal(10000.5, 'USD', 'en-US')).toBe('USD 10,000.50')
     })
 
     it('should mask decimal with amount decimal, currency, other locale', () => {
-      expect(maskingDecimal(10000.5, 'IDR', 'id-ID')).toBe('Rp 10.000.50')
+      expect(maskDecimal(10000.5, 'IDR', 'id-ID')).toBe('Rp 10.000.50')
     })
 
     it('should mask decimal with amount zero, currency, without locale', () => {
-      expect(maskingDecimal(0, 'IDR')).toBe('Rp 0')
+      expect(maskDecimal(0, 'IDR')).toBe('Rp 0')
     })
 
     it('should mask decimal with amount null, currency, without locale', () => {
-      expect(maskingDecimal(null, 'IDR')).toBe('-')
+      expect(maskDecimal(null, 'IDR')).toBe('-')
     })
 
     it('should handle invalid number properly (expected fallback)', () => {
-      expect(maskingDecimal('abc', 50)).toBe('-')
+      expect(maskDecimal('abc', 50)).toBe('-')
     })
 
     it('should mask decimal with amount decimal, currency, other locale with other currency', () => {
-      expect(maskingDecimal(10000.5, 'PKR', 'id-ID')).toBe('PKR 10.000.50')
+      expect(maskDecimal(10000.5, 'PKR', 'id-ID')).toBe('PKR 10.000.50')
     })
 
     it('handle edge case 0 string', () => {
-      expect(maskingDecimal('0', 'PKR', 'id-ID')).toBe('PKR 0.00')
+      expect(maskDecimal('0', 'PKR', 'id-ID')).toBe('PKR 0.00')
     })
 
     it('handle edge case undefined', () => {
-      expect(maskingDecimal(undefined, 'PKR', 'id-ID')).toBe('-')
+      expect(maskDecimal(undefined, 'PKR', 'id-ID')).toBe('-')
     })
 
     it('should handle invalid number properly (expected fallback)', () => {
-      expect(maskingDecimal(123, 'abs')).toBe('abs 123.00')
+      expect(maskDecimal(123, 'abs')).toBe('abs 123.00')
     })
 
     it('should handle invalid number properly (expected fallback)', () => {
-      expect(maskingDecimal('', '', '')).toBe('-')
+      expect(maskDecimal('', '', '')).toBe('-')
     })
 
     it('should handle invalid number properly (expected fallback)', () => {
-      expect(maskingDecimal('', '')).toBe('-')
+      expect(maskDecimal('', '')).toBe('-')
     })
 
     it('should handle invalid number properly (expected fallback)', () => {
-      expect(maskingDecimal(0.1, '')).toBe('-')
+      expect(maskDecimal(0.1, '')).toBe('-')
     })
   })
 })

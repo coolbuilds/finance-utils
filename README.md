@@ -15,7 +15,7 @@ scalability, performance, and great developer experience.
 - 💱 Currency & number helpers
 - 💳 Installment calculations
 - 📈 Compound interest calculations
-- 🔐 Data masking (account, name, etc.)
+- 🔐 Data masking (account, name, decimal, etc.)
 - 🧾 Transaction utilities
 - ⚡ Zero dependencies
 - 🧠 Simple, composable functions
@@ -41,13 +41,16 @@ yarn add @coolbuilds/finance-utils
 ### 🔐 Masking
 
 ```ts
-import { maskAccount, maskName } from '@coolbuilds/finance-utils'
+import { maskAccount, maskName, maskDecimal } from '@coolbuilds/finance-utils'
 
 maskAccount('1234567890')
 // ******7890
 
 maskName('Ricky Ariansyah')
 // R**** A********
+
+maskDecimal(10000.5, 'USD', 'en-US')
+// USD 10,000.50
 ```
 
 ---

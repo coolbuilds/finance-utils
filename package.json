@@ -24,6 +24,7 @@
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix",
     "format": "prettier --write .",
+    "contributors": "node scripts/updateContributors.mjs",
     "build": "npm run lint && prettier --check . && tsup src/index.ts --format esm,cjs --dts",
     "prepublishOnly": "npm run test:run && npm run build",
     "test": "vitest",

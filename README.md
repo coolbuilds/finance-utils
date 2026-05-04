@@ -141,6 +141,12 @@ Contributions are welcome!
 
 ---
 
+## 👥 Contributors
+
+- Ricky Ariansyah
+
+---
+
 ## 📄 License
 
 MIT

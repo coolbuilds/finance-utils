@@ -42,7 +42,7 @@ describe('calculateTotalWithTax', () => {
   it('should return 0 when taxRate is Infinity', () => {
     expect(calculateTotalWithTax(100000, Infinity)).toBe(0)
   })
-  
+
   it('should calculate precise decimal result', () => {
     expect(calculateTotalWithTax(0.1, 0.2)).toBe(0.12)
   })

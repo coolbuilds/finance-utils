@@ -41,7 +41,7 @@ describe('masking', () => {
     })
 
     it('should handle invalid number properly (expected fallback)', () => {
-    expect(maskingDecimal('abc', 'IDR')).toBe('-')
+    expect(maskingDecimal('abc', 50)).toBe('-')
 })
   })
 })

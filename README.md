@@ -77,7 +77,7 @@ calculateCompoundInterest(1000, 0.05, 2, 100)
 
 ### 🧾 Tax Calculation
 
-```ts
+````ts
 import { calculateTotalWithTax } from '@coolbuilds/finance-utils'
 
 calculateTotalWithTax(100000, 0.1)
@@ -89,7 +89,7 @@ import { formatCurrency } from '@coolbuilds/finance-utils'
 
 formatCurrency(15000, { currency: 'IDR', locale: 'id-ID' })
 // Rp 15.000
-```
+````
 
 ---
 
@@ -120,6 +120,7 @@ Calculate total amount including tax.
 - `taxRate`: tax rate in decimal (e.g. 0.1 for 10%)
 
 Returns total amount after tax.
+
 ### `formatCurrency(amount: number, options?: FormatCurrencyOptions): string`
 
 Format a number as currency using `Intl.NumberFormat`.

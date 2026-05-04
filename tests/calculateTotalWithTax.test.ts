@@ -26,4 +26,8 @@ describe('calculateTotalWithTax', () => {
   it('should handle string input expected return 0', () => {
     expect(calculateTotalWithTax('hahahahah', 'kocakgaming')).toBe(0)
   })
+
+  it('should handle string input expected return 0', () => {
+    expect(calculateTotalWithTax('hahahahah', 'kocakgaming')).toBe('hahahahahkocakgaming')
+  })
 })

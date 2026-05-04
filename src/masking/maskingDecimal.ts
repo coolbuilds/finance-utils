@@ -23,7 +23,11 @@ export function maskingDecimal(
   currency: Currency,
   locale: string = 'en-US'
 ): string {
-  if (isDecimal === null || isDecimal === undefined || isNaN(Number(isDecimal))) {
+  if (
+    isDecimal === null ||
+    isDecimal === undefined ||
+    isNaN(Number(isDecimal))
+  ) {
     return '-'
   }
 

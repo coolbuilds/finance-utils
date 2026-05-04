@@ -92,7 +92,7 @@ jobs:
             } > CHANGELOG.md
           fi
 
-          npm run contributors
+          GITHUB_TOKEN="${{ github.token }}" npm run contributors
 
           echo "RELEASE_VERSION=${VERSION}" >> "$GITHUB_ENV"
           echo "RELEASE_NOTES_FILE=$RUNNER_TEMP/release-notes.md" >> "$GITHUB_ENV"

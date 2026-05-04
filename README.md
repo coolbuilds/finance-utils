@@ -17,6 +17,7 @@ scalability, performance, and great developer experience.
 - 📈 Compound interest calculations
 - 🔐 Data masking (account, name, decimal, etc.)
 - 🧾 Transaction utilities
+- 🧾 Tax & fee calculations
 - ⚡ Zero dependencies
 - 🧠 Simple, composable functions
 
@@ -77,6 +78,24 @@ calculateCompoundInterest(1000, 0.05, 2, 100)
 
 ---
 
+### 🧾 Tax Calculation
+
+````ts
+import { calculateTotalWithTax } from '@coolbuilds/finance-utils'
+
+calculateTotalWithTax(100000, 0.1)
+// 110000
+### 💱 Currency
+
+```ts
+import { formatCurrency } from '@coolbuilds/finance-utils'
+
+formatCurrency(15000, { currency: 'IDR', locale: 'id-ID' })
+// Rp 15.000
+````
+
+---
+
 ## 🧩 API
 
 ### `maskAccount(account: string): string`
@@ -95,6 +114,19 @@ Split amount into installments with correct rounding.
 
 Calculate compound interest, with optional contribution added at the end
 of each period.
+
+### `calculateTotalWithTax(amount: number, taxRate: number): number`
+
+Calculate total amount including tax.
+
+- `amount`: base amount
+- `taxRate`: tax rate in decimal (e.g. 0.1 for 10%)
+
+Returns total amount after tax.
+
+### `formatCurrency(amount: number, options?: FormatCurrencyOptions): string`
+
+Format a number as currency using `Intl.NumberFormat`.
 
 ---
 
@@ -127,6 +159,7 @@ src/
   masking/
   installment/
   interest/
+  currency/
   transaction/
 tests/
 ```

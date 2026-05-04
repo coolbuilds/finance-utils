@@ -1,6 +1,6 @@
 {
   "name": "@coolbuilds/finance-utils",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "A modular TypeScript toolkit for financial logic.",
   "main": "dist/index.cjs",
   "module": "dist/index.js",

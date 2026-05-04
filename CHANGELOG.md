@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.0.6 - 2026-05-04
+
+- ci: render contributor profiles (0bd73ea)
+
 ## v1.0.5 - 2026-05-04
 
 - ci: update contributors during release (7c5d7c8)

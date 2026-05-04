@@ -17,6 +17,7 @@ scalability, performance, and great developer experience.
 - 📈 Compound interest calculations
 - 🔐 Data masking (account, name, etc.)
 - 🧾 Transaction utilities
+- 🧾 Tax & fee calculations
 - ⚡ Zero dependencies
 - 🧠 Simple, composable functions
 
@@ -74,6 +75,16 @@ calculateCompoundInterest(1000, 0.05, 2, 100)
 
 ---
 
+### 🧾 Tax Calculation
+
+```ts
+import { calculateTotalWithTax } from '@coolbuilds/finance-utils'
+
+calculateTotalWithTax(100000, 0.1)
+// 110000
+
+---
+
 ## 🧩 API
 
 ### `maskAccount(account: string): string`
@@ -92,6 +103,15 @@ Split amount into installments with correct rounding.
 
 Calculate compound interest, with optional contribution added at the end
 of each period.
+
+### `calculateTotalWithTax(amount: number, taxRate: number): number`
+
+Calculate total amount including tax.
+
+- `amount`: base amount
+- `taxRate`: tax rate in decimal (e.g. 0.1 for 10%)
+
+Returns total amount after tax.
 
 ---
 

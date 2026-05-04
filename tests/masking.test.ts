@@ -39,5 +39,9 @@ describe('masking', () => {
     it('should mask decimal with amount null, currency, without locale', () => {
       expect(maskingDecimal(null, 'IDR')).toBe('-')
     })
+
+    it('should handle invalid number properly (expected fallback)', () => {
+    expect(maskingDecimal('abc', 'IDR')).toBe('-')
+})
   })
 })

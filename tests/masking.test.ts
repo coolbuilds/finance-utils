@@ -41,7 +41,19 @@ describe('masking', () => {
     })
 
     it('should handle invalid number properly (expected fallback)', () => {
-    expect(maskingDecimal('abc', 50)).toBe('-')
-})
+      expect(maskingDecimal('abc', 50)).toBe('-')
+    })
+
+    it('should mask decimal with amount decimal, currency, other locale with other currency', () => {
+      expect(maskingDecimal(10000.5, 'PKR', 'id-ID')).toBe('PKR 10.000.50')
+    })
+
+    it('handle edge case 0 string', () => {
+      expect(maskingDecimal('0', 'PKR', 'id-ID')).toBe('PKR 0.00')
+    })
+
+    it('handle edge case undefined', () => {
+      expect(maskingDecimal(undefined, 'PKR', 'id-ID')).toBe('-')
+    })
   })
 })

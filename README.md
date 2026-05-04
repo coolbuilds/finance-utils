@@ -181,8 +181,12 @@ Contributions are welcome!
 
 <table>
 <tr>
+<td align="center">Ahmad Arif</td>
+<td align="center">Ahmad Arif Saputra</td>
+<td align="center">bim.krismon</td>
+<td align="center">Hans Mayson</td>
+<td align="center">hansmayson14</td>
 <td align="center"><a href="https://github.com/coolbuilds"><img src="https://github.com/coolbuilds.png?size=128" width="64" height="64" alt="Ricky Ariansyah" /><br /><sub><b>Ricky Ariansyah</b></sub></a></td>
-<td align="center"><a href="https://github.com/Rickyarians"><img src="https://avatars.githubusercontent.com/u/33547206?v=4" width="64" height="64" alt="Rickyarians" /><br /><sub><b>Rickyarians</b></sub></a></td>
 </tr>
 </table>
 

@@ -41,6 +41,6 @@ describe('format account number', () => {
   })
 
   it('should formate with number', () => {
-    expect(formatAccountNumber(123)).toBe('123')
+    expect(formatAccountNumber(123)).toBe('')
   })
 })

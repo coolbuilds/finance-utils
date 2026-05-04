@@ -14,6 +14,7 @@ scalability, performance, and great developer experience.
 
 - 💱 Currency & number helpers
 - 💳 Installment calculations
+- 📈 Compound interest calculations
 - 🔐 Data masking (account, name, etc.)
 - 🧾 Transaction utilities
 - ⚡ Zero dependencies
@@ -62,6 +63,17 @@ splitInstallment(1000, 3)
 
 ---
 
+### 📈 Interest
+
+```ts
+import { calculateCompoundInterest } from '@coolbuilds/finance-utils'
+
+calculateCompoundInterest(1000, 0.05, 2, 100)
+// 1307.5
+```
+
+---
+
 ## 🧩 API
 
 ### `maskAccount(account: string): string`
@@ -75,6 +87,11 @@ Mask each word in a name.
 ### `splitInstallment(amount: number, months: number): number[]`
 
 Split amount into installments with correct rounding.
+
+### `calculateCompoundInterest(principal: number, rate: number, periods: number, contribution?: number): number`
+
+Calculate compound interest, with optional contribution added at the end
+of each period.
 
 ---
 
@@ -106,6 +123,7 @@ npm run test
 src/
   masking/
   installment/
+  interest/
   transaction/
 tests/
 ```

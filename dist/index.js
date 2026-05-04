@@ -19,7 +19,30 @@ function splitInstallment(amount, months) {
     (_, i) => i === months - 1 ? base + remainder : base
   );
 }
+
+// src/interest/calculateCompoundInterest.ts
+function assertFiniteNumber(value, name) {
+  if (!Number.isFinite(value)) {
+    throw new RangeError(`${name} must be a finite number`);
+  }
+}
+function calculateCompoundInterest(principal, rate, periods, contribution = 0) {
+  assertFiniteNumber(principal, "principal");
+  assertFiniteNumber(rate, "rate");
+  assertFiniteNumber(periods, "periods");
+  assertFiniteNumber(contribution, "contribution");
+  if (periods < 0) {
+    throw new RangeError("periods must be greater than or equal to 0");
+  }
+  if (rate === 0) {
+    return principal + contribution * periods;
+  }
+  const growthFactor = (1 + rate) ** periods;
+  const contributionValue = contribution * ((growthFactor - 1) / rate);
+  return principal * growthFactor + contributionValue;
+}
 export {
+  calculateCompoundInterest,
   maskAccount,
   maskName,
   splitInstallment

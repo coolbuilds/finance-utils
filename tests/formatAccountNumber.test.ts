@@ -22,4 +22,24 @@ describe('format account number', () => {
   it('should formate whit space', () => {
     expect(formatAccountNumber('1234 5678 9123')).toBe('1234-5678-9123')
   })
+
+  it('should return value even function get two or more parameter', () => {
+    expect(formatAccountNumber('1234 5678 9123', 'fdfd')).toBe('1234-5678-9123')
+  })
+
+  it('edge case undefined value paramater', () => {
+    expect(formatAccountNumber(undefined)).toBe('')
+  })
+
+  it('edge case array value paramater', () => {
+    expect(formatAccountNumber([])).toBe('')
+  })
+
+  // ada ketentuan panjang account number, 
+  it('edge case array value paramater', () => {
+    expect(formatAccountNumber('12321')).toBe('')
+  })
+
+
+
 })

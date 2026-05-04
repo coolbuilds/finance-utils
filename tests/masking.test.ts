@@ -55,5 +55,21 @@ describe('masking', () => {
     it('handle edge case undefined', () => {
       expect(maskingDecimal(undefined, 'PKR', 'id-ID')).toBe('-')
     })
+
+    it('should handle invalid number properly (expected fallback)', () => {
+      expect(maskingDecimal(123, 'abs')).toBe('-')
+    })
+
+    it('should handle invalid number properly (expected fallback)', () => {
+      expect(maskingDecimal('', '', '')).toBe('-')
+    })
+
+    it('should handle invalid number properly (expected fallback)', () => {
+      expect(maskingDecimal('', '')).toBe('-')
+    })
+
+    it('should handle invalid number properly (expected fallback)', () => {
+      expect(maskingDecimal(0.1, '')).toBe('-')
+    })
   })
 })

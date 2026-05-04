@@ -39,5 +39,4 @@ describe('format account number', () => {
   it('edge case length param kurang dari 7 digit', () => {
     expect(formatAccountNumber(123)).toBe('')
   })
-
 })

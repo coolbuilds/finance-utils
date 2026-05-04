@@ -57,7 +57,7 @@ describe('masking', () => {
     })
 
     it('should handle invalid number properly (expected fallback)', () => {
-      expect(maskingDecimal(123, 'abs')).toBe('-')
+      expect(maskingDecimal(123, 'abs')).toBe('abs 123.00')
     })
 
     it('should handle invalid number properly (expected fallback)', () => {

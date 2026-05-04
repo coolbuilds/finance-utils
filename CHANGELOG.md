@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.0.8 - 2026-05-04
+
+- feat: add currency formatter (4a7bd0d)
+
+## v1.0.7 - 2026-05-04
+
+- chore: update contributor email (38dc5e4)
+
 ## v1.0.6 - 2026-05-04
 
 - ci: render contributor profiles (0bd73ea)

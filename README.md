@@ -82,6 +82,14 @@ import { calculateTotalWithTax } from '@coolbuilds/finance-utils'
 
 calculateTotalWithTax(100000, 0.1)
 // 110000
+### 💱 Currency
+
+```ts
+import { formatCurrency } from '@coolbuilds/finance-utils'
+
+formatCurrency(15000, { currency: 'IDR', locale: 'id-ID' })
+// Rp 15.000
+```
 
 ---
 
@@ -112,6 +120,9 @@ Calculate total amount including tax.
 - `taxRate`: tax rate in decimal (e.g. 0.1 for 10%)
 
 Returns total amount after tax.
+### `formatCurrency(amount: number, options?: FormatCurrencyOptions): string`
+
+Format a number as currency using `Intl.NumberFormat`.
 
 ---
 
@@ -144,6 +155,7 @@ src/
   masking/
   installment/
   interest/
+  currency/
   transaction/
 tests/
 ```
@@ -166,6 +178,7 @@ Contributions are welcome!
 <table>
 <tr>
 <td align="center"><a href="https://github.com/coolbuilds"><img src="https://github.com/coolbuilds.png?size=128" width="64" height="64" alt="Ricky Ariansyah" /><br /><sub><b>Ricky Ariansyah</b></sub></a></td>
+<td align="center"><a href="https://github.com/Rickyarians"><img src="https://avatars.githubusercontent.com/u/33547206?v=4" width="64" height="64" alt="Rickyarians" /><br /><sub><b>Rickyarians</b></sub></a></td>
 </tr>
 </table>
 

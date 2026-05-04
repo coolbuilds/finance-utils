@@ -181,12 +181,10 @@ Contributions are welcome!
 
 <table>
 <tr>
-<td align="center">Ahmad Arif</td>
-<td align="center">Ahmad Arif Saputra</td>
-<td align="center">bim.krismon</td>
-<td align="center">Hans Mayson</td>
-<td align="center">hansmayson14</td>
-<td align="center"><a href="https://github.com/coolbuilds"><img src="https://github.com/coolbuilds.png?size=128" width="64" height="64" alt="Ricky Ariansyah" /><br /><sub><b>Ricky Ariansyah</b></sub></a></td>
+<td align="center"><a href="https://github.com/Crimin4L96"><img src="https://github.com/Crimin4L96.png?size=128" width="64" height="64" alt="Ahmad Arif Saputra" /><br /><sub><b>Ahmad Arif Saputra</b></sub></a></td>
+<td align="center"><a href="https://github.com/Bimbimmulya"><img src="https://github.com/Bimbimmulya.png?size=128" width="64" height="64" alt="bim.krismon" /><br /><sub><b>bim.krismon</b></sub></a></td>
+<td align="center"><a href="https://github.com/hanssitumeang14"><img src="https://github.com/hanssitumeang14.png?size=128" width="64" height="64" alt="Hans Mayson" /><br /><sub><b>Hans Mayson</b></sub></a></td>
+<td align="center"><a href="https://github.com/Rickyarians"><img src="https://github.com/Rickyarians.png?size=128" width="64" height="64" alt="Ricky Ariansyah" /><br /><sub><b>Ricky Ariansyah</b></sub></a></td>
 </tr>
 </table>
 

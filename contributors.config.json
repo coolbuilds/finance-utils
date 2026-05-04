@@ -1,7 +1,28 @@
 [
   {
-    "emails": ["rickyarians@outlook.com"],
-    "github": "coolbuilds",
+    "emails": [
+      "46838330+Crimin4L96@users.noreply.github.com",
+      "ahmadarifsaputra@gmail.com"
+    ],
+    "github": "Crimin4L96",
+    "name": "Ahmad Arif Saputra"
+  },
+  {
+    "emails": ["bim.krismon@permatabank.co.id", "bimbimmulya24@gmail.com"],
+    "github": "Bimbimmulya",
+    "name": "bim.krismon"
+  },
+  {
+    "emails": [
+      "61855482+hanssitumeang14@users.noreply.github.com",
+      "hans.mp.situmeang14@gmail.com"
+    ],
+    "github": "hanssitumeang14",
+    "name": "Hans Mayson"
+  },
+  {
+    "emails": ["ricky.sugandi@permatabank.co.id", "rickyarians@outlook.com"],
+    "github": "Rickyarians",
     "name": "Ricky Ariansyah"
   }
 ]

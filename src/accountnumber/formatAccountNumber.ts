@@ -1,10 +1,9 @@
 export function formatAccountNumber(
-  acctNum: string,
+  acctNum: string | number,
   separator: string = '-'
 ): string {
   if (!acctNum) return ''
-
-  const onlyDigit = acctNum.replace(/\D/g, '') //ignore character non digit 0-9
+  const onlyDigit = acctNum.toString().replace(/\D/g, '') //ignore character non digit 0-9
   if (!onlyDigit) return ''
 
   const escapedSeparator = separator.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')

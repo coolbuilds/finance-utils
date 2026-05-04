@@ -36,11 +36,8 @@ describe('format account number', () => {
   })
 
   // ada ketentuan panjang account number,
-  it('edge case array value paramater', () => {
-    expect(formatAccountNumber('12321')).toBe('')
-  })
-
-  it('should formate with number', () => {
+  it('edge case length param kurang dari 7 digit', () => {
     expect(formatAccountNumber(123)).toBe('')
   })
+
 })

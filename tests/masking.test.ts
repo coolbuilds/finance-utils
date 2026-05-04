@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 
-import { maskAccount, maskName } from '../src/masking'
+import { maskAccount, maskName, maskingDecimal } from '../src/masking'
 
 describe('masking', () => {
   describe('maskAccount', () => {
@@ -16,6 +16,28 @@ describe('masking', () => {
   describe('maskName', () => {
     it('should mask each word', () => {
       expect(maskName('Ricky Ariansyah')).toBe('R**** A********')
+    })
+  })
+
+  describe('maskingDecimal', () => {
+    it('should mask decimal with amount, currency, locale', () => {
+      expect(maskingDecimal('10000', 'IDR', 'en-US')).toBe('Rp 10,000')
+    })
+
+    it('should mask decimal with amount decimal, currency, locale', () => {
+      expect(maskingDecimal(10000.5, 'USD', 'en-US')).toBe('USD 10,000.50')
+    })
+
+    it('should mask decimal with amount decimal, currency, other locale', () => {
+      expect(maskingDecimal(10000.5, 'IDR', 'id-ID')).toBe('Rp 10.000.50')
+    })
+
+    it('should mask decimal with amount zero, currency, without locale', () => {
+      expect(maskingDecimal(0, 'IDR')).toBe('Rp 0')
+    })
+
+    it('should mask decimal with amount null, currency, without locale', () => {
+      expect(maskingDecimal(null, 'IDR')).toBe('-')
     })
   })
 })

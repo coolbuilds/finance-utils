@@ -19,11 +19,11 @@ type Currency =
   | string
 
 export function maskingDecimal(
-  isDecimal: string | number | null | undefined,
+  isDecimal: number | null | undefined,
   currency: Currency,
   locale: string = 'en-US'
 ): string {
-  if (isDecimal === null || isDecimal === undefined || isDecimal === '') {
+  if (isDecimal === null || isDecimal === undefined || isNaN(Number(isDecimal))) {
     return '-'
   }
 

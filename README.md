@@ -15,8 +15,9 @@ scalability, performance, and great developer experience.
 - 💱 Currency & number helpers
 - 💳 Installment calculations
 - 📈 Compound interest calculations
-- 🔐 Data masking (account, name, etc.)
+- 🔐 Data masking (account, name, decimal, etc.)
 - 🧾 Transaction utilities
+- 🧾 Tax & fee calculations
 - ⚡ Zero dependencies
 - 🧠 Simple, composable functions
 
@@ -41,13 +42,16 @@ yarn add @coolbuilds/finance-utils
 ### 🔐 Masking
 
 ```ts
-import { maskAccount, maskName } from '@coolbuilds/finance-utils'
+import { maskAccount, maskName, maskDecimal } from '@coolbuilds/finance-utils'
 
 maskAccount('1234567890')
 // ******7890
 
 maskName('Ricky Ariansyah')
 // R**** A********
+
+maskDecimal(10000.5, 'USD', 'en-US')
+// USD 10,000.50
 ```
 
 ---
@@ -74,6 +78,13 @@ calculateCompoundInterest(1000, 0.05, 2, 100)
 
 ---
 
+### 🧾 Tax Calculation
+
+````ts
+import { calculateTotalWithTax } from '@coolbuilds/finance-utils'
+
+calculateTotalWithTax(100000, 0.1)
+// 110000
 ### 💱 Currency
 
 ```ts
@@ -81,7 +92,7 @@ import { formatCurrency } from '@coolbuilds/finance-utils'
 
 formatCurrency(15000, { currency: 'IDR', locale: 'id-ID' })
 // Rp 15.000
-```
+````
 
 ---
 
@@ -103,6 +114,15 @@ Split amount into installments with correct rounding.
 
 Calculate compound interest, with optional contribution added at the end
 of each period.
+
+### `calculateTotalWithTax(amount: number, taxRate: number): number`
+
+Calculate total amount including tax.
+
+- `amount`: base amount
+- `taxRate`: tax rate in decimal (e.g. 0.1 for 10%)
+
+Returns total amount after tax.
 
 ### `formatCurrency(amount: number, options?: FormatCurrencyOptions): string`
 
